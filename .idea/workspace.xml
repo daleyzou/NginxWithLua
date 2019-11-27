@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab354f44-9204-43e3-bbd0-498fcc4792ad" name="Default Changelist" comment="" />
+    <list default="true" id="ab354f44-9204-43e3-bbd0-498fcc4792ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conf/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+            <state relative-caret-position="152">
+              <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -40,6 +42,9 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -54,6 +59,7 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -65,11 +71,6 @@
             <path>
               <item name="NginxWithLua" type="b2602c69:ProjectViewProjectNode" />
               <item name="NginxWithLua" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NginxWithLua" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NginxWithLua" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NginxWithLua" type="b2602c69:ProjectViewProjectNode" />
@@ -87,6 +88,13 @@
               <item name="vhost" type="462c0819:PsiDirectoryNode" />
               <item name="lua" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="NginxWithLua" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NginxWithLua" type="462c0819:PsiDirectoryNode" />
+              <item name="vhost" type="462c0819:PsiDirectoryNode" />
+              <item name="lua" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -98,7 +106,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574859547482" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574860111096" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -146,12 +154,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574858569021</updated>
-      <workItem from="1574858571554" duration="809000" />
+      <workItem from="1574858571554" duration="1539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="809000" />
+    <option name="totallyTimeSpent" value="1539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -164,7 +172,7 @@
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info id="Alibaba Cloud Explorer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26812366" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" />
@@ -213,8 +221,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+        <state relative-caret-position="152">
+          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
         </state>
       </provider>
     </entry>
