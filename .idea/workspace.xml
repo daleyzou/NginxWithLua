@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab354f44-9204-43e3-bbd0-498fcc4792ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vhost/lua/customizeRules.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhost/lua/flowControl.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhost/lua/grayscaleControl.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhost/lua/init.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vhost/lua/grayscaleControl.lua" beforeDir="false" afterPath="$PROJECT_DIR$/vhost/lua/grayscaleControl.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua" beforeDir="false" afterPath="$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +40,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+            <state relative-caret-position="240">
+              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vhost/lua/customizeRules.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="678">
+              <caret line="199" column="19" lean-forward="true" selection-start-line="199" selection-start-column="19" selection-end-line="199" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -59,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vhost/lua/grayscaleControl.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1680">
-              <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+            <state relative-caret-position="270">
+              <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -92,9 +97,9 @@
       <list>
         <option value="$PROJECT_DIR$/conf/nginx.conf" />
         <option value="$PROJECT_DIR$/vhost/lua/init.lua" />
-        <option value="$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua" />
         <option value="$PROJECT_DIR$/vhost/lua/flowControl.lua" />
         <option value="$PROJECT_DIR$/vhost/lua/grayscaleControl.lua" />
+        <option value="$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua" />
       </list>
     </option>
   </component>
@@ -144,7 +149,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574865056031" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574908474082" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -193,16 +198,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574858569021</updated>
-      <workItem from="1574858571554" duration="4666000" />
+      <workItem from="1574858571554" duration="6586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4666000" />
+    <option name="totallyTimeSpent" value="6586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="JRebel" side_tool="true" />
       <window_info id="Image Layers" />
@@ -272,13 +276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vhost/lua/init.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -288,8 +285,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vhost/lua/grayscaleControl.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1680">
-          <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        <state relative-caret-position="270">
+          <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhost/lua/customizeRules.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="199" column="19" lean-forward="true" selection-start-line="199" selection-start-column="19" selection-end-line="199" selection-end-column="19" />
         </state>
       </provider>
     </entry>

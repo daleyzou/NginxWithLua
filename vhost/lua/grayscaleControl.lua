@@ -3,9 +3,11 @@
 appVersion=ngx.req.get_headers()["x-appVersion"]
 h5Version=ngx.req.get_headers()["x-h5-grayscale-version"]
 webVersion=ngx.req.get_headers()["x-web-grayscale-version"]
+-- 从请求中获取请求头为 Sec-WebSocket-Protocol 的值
 secWebSocketProtocol=ngx.req.get_headers()["Sec-WebSocket-Protocol"]
 organize=ngx.var.cookie_organize
 muid=ngx.var.cookie_muid
+-- 从 cookie 中获取uid对应的值
 uid=ngx.var.cookie_uid
 
 

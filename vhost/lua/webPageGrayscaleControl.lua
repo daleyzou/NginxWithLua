@@ -2,9 +2,12 @@
 
 uid=ngx.var.cookie_uid
 headers=ngx.req.get_headers()
+-- 从请求头中获取来源 ip
 ip=headers["X-REAL-IP"] or headers["X_FORWARDED_FOR"] or ngx.var.remote_addr
 organize=ngx.var.cookie_organize
 muid=ngx.var.cookie_muid
+-- 获取我们在 nginx 中定义的变量
+-- set $lct "initialD";
 location=ngx.var.lct
 sr=ngx.var.sr
 if location == nil then
