@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab354f44-9204-43e3-bbd0-498fcc4792ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/vhost/lua/grayscaleControl.lua" beforeDir="false" afterPath="$PROJECT_DIR$/vhost/lua/grayscaleControl.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua" beforeDir="false" afterPath="$PROJECT_DIR$/vhost/lua/webPageGrayscaleControl.lua" afterDir="false" />
-    </list>
+    <list default="true" id="ab354f44-9204-43e3-bbd0-498fcc4792ad" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +146,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574908474082" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574908567487" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -207,6 +204,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="JRebel" side_tool="true" />
       <window_info id="Image Layers" />
