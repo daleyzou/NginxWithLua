@@ -1,3 +1,10 @@
+--
+-- Created by IntelliJ IDEA.
+-- User: wk
+-- Date: 2019/8/28
+-- Time: 10:39 上午
+-- To change this template use File | Settings | File Templates.
+--
 
 flowControl = {}
 
@@ -27,7 +34,7 @@ function flowControl.isGrayFlow(grayTaskId, flowLimitRate)
 
 --    print(requestCountor)
 
-    if requestCountor % 100 <= flowLimitRate then
+    if requestCountor % 100 < flowLimitRate then
         return true
     else
         return false

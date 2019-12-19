@@ -3,11 +3,9 @@
 appVersion=ngx.req.get_headers()["x-appVersion"]
 h5Version=ngx.req.get_headers()["x-h5-grayscale-version"]
 webVersion=ngx.req.get_headers()["x-web-grayscale-version"]
--- 从请求中获取请求头为 Sec-WebSocket-Protocol 的值
 secWebSocketProtocol=ngx.req.get_headers()["Sec-WebSocket-Protocol"]
 organize=ngx.var.cookie_organize
 muid=ngx.var.cookie_muid
--- 从 cookie 中获取uid对应的值
 uid=ngx.var.cookie_uid
 
 
@@ -16,6 +14,19 @@ if location == nil then
     ngx.log(ngx.ERR, "please set lct arg")
     return
 end
+
+appVersionTableJson=ngx.shared.whitelist_zone:get(ngx.var.host..":"..location..":".."x-appVersion:1")
+h5VersionTableJson= ngx.shared.whitelist_zone:get(ngx.var.host..":"..location..":".."x-h5-grayscale-version:1")
+webVersionTableJson= ngx.shared.whitelist_zone:get(ngx.var.host..":"..location..":".."x-web-grayscale-version:1")
+secWebSocketProtocolTableJson= ngx.shared.whitelist_zone:get(ngx.var.host..":"..location..":".."Sec-WebSocket-Protocol:1")
+
+ngx.log(ngx.INFO,"host=",ngx.var.host,"---appVersionTableJson=",appVersionTableJson,"---h5VersionTableJson=",h5VersionTableJson,"---webVersionTableJson=",webVersionTableJson,"---secWebSocketProtocolTableJson=",secWebSocketProtocolTableJson,"---appVersion=",appVersion,"---h5Version=",h5Version,"---webVersion=",webVersion,"---secWebSocketProtocol=",secWebSocketProtocol)
+
+
+uidTableJson= ngx.shared.whitelist_zone:get(ngx.var.host..":"..location..":".."uid:1")
+muidTableJson=ngx.shared.whitelist_zone:get(ngx.var.host..":"..location..":".."muid:1")
+organizeTableJson=ngx.shared.whitelist_zone:get(ngx.var.host..":"..location..":".."organize:1")
+ngx.log(ngx.INFO,"host=",ngx.var.host,"---uidTableJson=",uidTableJson,"---muidTableJson=",muidTableJson,"---organizeTableJson=",organizeTableJson,"---uid=",uid,"---muid=",muid,"---organize=",organize)
 
 -- 从内存中获取自定义的值
 findResultTableJson=ngx.shared.whitelist_customize:get(ngx.var.host..":"..location..":1")
@@ -188,7 +199,12 @@ docheck=function()
     end
     return result
 end
-return docheck()
+local status, message = pcall(docheck)
+if status then
+    return message
+else
+    return location.."_default"
+end
 
 
 

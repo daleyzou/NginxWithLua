@@ -1,5 +1,4 @@
 location=ngx.var.lct
-
 local customizeRules = {}
 
 local function isTableEmpty(t)
@@ -20,7 +19,7 @@ local function matchWithRegular(sources,field)
             end
         else
             if err then
-                ngx.log(ngx.ERR,"host=",ngx.var.host,"---location=",location,"---key=",sources.key,"--err=",err)
+                ngx.log(ngx.INFO,"host=",ngx.var.host,"---location=",location,"---key=",sources.key,"--err=",err)
             end
             return false
         end
@@ -142,13 +141,13 @@ local function judgeByCookie(sources)
     local ck = require "cookie"
     local cookie, err = ck:new()
     if not cookie then
-        ngx.log(ngx.ERR, "host=",ngx.var.host,"---location=",location,"---err",err)
+        ngx.log(ngx.INFO, "host=",ngx.var.host,"---location=",location,"---err",err)
         return false
     end
     local cookie = cookie:new()
     local all_cookie,err = cookie:get_all()
     if not all_cookie then
-        ngx.log(ngx.ERR, "host=",ngx.var.host,"---location=",location,"---err",err)
+        ngx.log(ngx.INFO, "host=",ngx.var.host,"---location=",location,"---err",err)
         return false
     end
     -- judge by key
@@ -157,7 +156,7 @@ local function judgeByCookie(sources)
         -- get single cookie
         local field, err = cookie:get(sources.key)
         if not field then
-            ngx.log(ngx.ERR, "judgeByCookie host=",ngx.var.host,"---location=",location,"---err",err)
+            ngx.log(ngx.INFO, "judgeByCookie host=",ngx.var.host,"---location=",location,"---err",err)
             return false
         end
         return compareSourcesWithField(sources,field)
@@ -169,12 +168,12 @@ end
 local function judgeByRequestParam(sources, cjson)
     local getParems = ngx.req.get_uri_args()
     if isTableEmpty(getParems) then
-        ngx.log(ngx.ERR, "judgeByRequestParam host=",ngx.var.host,"getParems is nil")
+        ngx.log(ngx.INFO, "judgeByRequestParam host=",ngx.var.host,"getParems is nil")
         return false
     end
     local field=getParems[sources.key]
     if not field then
-        ngx.log(ngx.ERR, "judgeByRequestParam method=GET host=",ngx.var.host,"---location=",location,"---all field=",cjson.encode(getParems))
+        ngx.log(ngx.INFO, "judgeByRequestParam method=GET host=",ngx.var.host,"---location=",location,"---all field=",cjson.encode(getParems))
         return false
     end
     return compareSourcesWithField(sources,field)
@@ -184,12 +183,12 @@ end
 local function judgeByHeader(sources,cjson)
     local headers = ngx.req.get_headers()
     if headers==nil then
-        ngx.log(ngx.ERR, "judgeByHeader host=",ngx.var.host,"headers is nil")
+        ngx.log(ngx.INFO, "judgeByHeader host=",ngx.var.host,"headers is nil")
         return false
     end
     local field=headers[sources.key]
     if not field then
-        ngx.log(ngx.ERR, "judgeByHeader field=nil host=",ngx.var.host,"---location=",location,"---all field",cjson.encode(headers))
+        ngx.log(ngx.INFO, "judgeByHeader field=nil host=",ngx.var.host,"---location=",location,"---all field",cjson.encode(headers))
         return false
     end
     return compareSourcesWithField(sources,field)
@@ -198,7 +197,7 @@ end
 local function judgeByURI(sources,cjson)
     local uri = ngx.var.uri
     if not uri then
-        ngx.log(ngx.ERR, "judgeByURI field=nil host=",ngx.var.host,"---location=",location,"---all field=",uri)
+        ngx.log(ngx.INFO, "judgeByURI field=nil host=",ngx.var.host,"---location=",location,"---all field=",uri)
         return false
     end
     return compareSourcesWithField(sources,uri)
@@ -264,19 +263,19 @@ end
 function customizeRules.applyCustomizeRules(findResultTable,cjson)
     local shouldNum = tonumber(findResultTable.rules.should_match_num)
     local countshould = 0
-    ngx.log(ngx.ERR, "data = " .. cjson.encode(findResultTable.rules))
+    ngx.log(ngx.INFO, "data = " .. cjson.encode(findResultTable.rules))
     local result=true
     for i, row in pairs(findResultTable.rules) do
-        ngx.log(ngx.ERR, " i=  " .. i)
+        ngx.log(ngx.INFO, " i=  " .. i)
         if i ~= "should_match_num" then
-            ngx.log(ngx.ERR, "into if i=  " .. i)
+            ngx.log(ngx.INFO, "into if i=  " .. i)
             -- 如果should 个数已经满足要求，就停止判断should
             local relation = row.relative
             if relation ~= "should" or countshould < shouldNum then
-                ngx.log(ngx.ERR, "in rules:" .. cjson.encode(row))
+                ngx.log(ngx.INFO, "in rules:" .. cjson.encode(row))
                 local status = checkRule(row)
                 if "must" == relation and not status then
-                    ngx.log(ngx.ERR, findResultTable.task_info.host .. ":" .. findResultTable.task_info.location .. " docheck relation=must and status=false and rule_name= " .. i .. " ---data=" .. cjson.encode(row))
+                    ngx.log(ngx.INFO, findResultTable.task_info.host .. ":" .. findResultTable.task_info.location .. " docheck relation=must and status=false and rule_name= " .. i .. " ---data=" .. cjson.encode(row))
                     result = false
                     break
                 end
@@ -287,13 +286,14 @@ function customizeRules.applyCustomizeRules(findResultTable,cjson)
         end
     end
     if countshould < shouldNum then
-        ngx.log(ngx.ERR, " countshould<shouldNum, run  " .. location .. "_default")
+        ngx.log(ngx.INFO, " countshould<shouldNum, run  " .. location .. "_default")
         return false
     end
     if result then
-        ngx.log(ngx.ERR, "Satisfy grayscale, run " .. location .. "_" .. findResultTable.task_info.group_code)
+        ngx.log(ngx.INFO, "Satisfy grayscale, run " .. location .. "_" .. findResultTable.task_info.group_code)
         return true
     end
 end
 
 return customizeRules
+
