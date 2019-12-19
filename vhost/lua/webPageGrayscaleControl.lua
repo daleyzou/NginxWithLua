@@ -208,4 +208,13 @@ docheck=function()
     end
 end
 
-docheck()
+local status = pcall(docheck)
+if not status then
+    if sr=="false" then
+        ngx.exec("@"..location.."_default")
+        return
+    elseif sr=="true" then
+        ngx.exec("@sr_"..location.."_default")
+        return
+    end
+end
